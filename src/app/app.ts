@@ -25,10 +25,14 @@ export class App {
     {
       id: 2,
       title: 'Advanced Angular',
-      description: 'Angular is a framework maintained by Microsoft',
+      description: 'Angular is a framework maintained by Microsofts',
       price: 200,
-      hasNewLocations: false,
+      hasNewLocations: true,
       soldOut: true,
     },
   ];
+
+  courseInfo(course: string): void {
+    alert(`The course you are taking is ${course}`);
+  }
 }
