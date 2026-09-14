@@ -4,5 +4,5 @@ export interface Course {
   description: string,
   price: number | string,
   hasNewLocations?: false,
-  soldOut: true
+  soldOut: true,
 }
