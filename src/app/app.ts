@@ -9,4 +9,6 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('TonyLeLearningAngularF26');
+  name: string = "Tony";
+  height: number = 5.11;
 }
