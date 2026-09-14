@@ -28,7 +28,7 @@ export class App {
       description: 'Angular is a framework maintained by Microsofts',
       price: 200,
       hasNewLocations: true,
-      soldOut: true,
+      soldOut: true
     },
   ];
 
