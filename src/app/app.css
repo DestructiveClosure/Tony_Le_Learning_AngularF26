@@ -1,30 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  font-family: "Montserrat", sans-serif;
 }
 
-:root{
-  --cherry: #670626;
-  --matcha: #bad797;
-}
 
 .container{
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 400px;
   gap: 1rem;
-
 }
 
 .container h1{
   margin-bottom: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #b0b7bc;
   width: fit-content;
-  color: white;
+  color: #fff;
 }
 
 .course-card{
@@ -32,17 +30,16 @@
   padding: 1rem;
   flex-direction: column;
   gap: 10px;
-  background-color: #670626;
+  background-color: #0076b6;
   border-radius: 10px;
 }
 
 .course-card p {
   font-size: 20px;
-  color: #bad797;
 }
 
 .special-offer{
-  background-color: burlywood;
+  background-color: #FFBF00;
   width: fit-content;
   padding: 5px;
   border-radius: 3px;
@@ -50,21 +47,22 @@
 
 #course-price{
   color: lightgreen;
+  font-weight: bold;
 }
 
 button{
   width: 150px;
   height: 50px;
-  background-color: #bad797;
+  background-color: #b0b7bc;
   border: 0;
   outline: 0;
   border-radius: 3px;
   font-size: 1.3rem;
+  color: navy;
 }
 
 .new-courses{
-  background-color: coral;
-  color: darkred;
+  background-color: #FFFF8F;
   width: fit-content;
   padding: 10px;
   text-transform: uppercase;

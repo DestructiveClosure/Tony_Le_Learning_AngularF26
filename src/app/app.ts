@@ -25,7 +25,7 @@ export class App {
     {
       id: 2,
       title: 'Advanced Angular',
-      description: 'Angular is a framework maintained by Microsofts',
+      description: 'Angular is a framework maintained by Google',
       price: 200,
       hasNewLocations: true,
       soldOut: true
