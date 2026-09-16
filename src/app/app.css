@@ -69,3 +69,16 @@ button{
   font-weight: bold;
   border-radius: 3px;
 }
+
+
+@media (max-width: 400px) {
+  .container h1 {
+    font-size: 2rem;
+  }
+  button{
+    padding: 0.5rem;
+  }
+  #course-price{
+    font-size: 2rem;
+  }
+}
