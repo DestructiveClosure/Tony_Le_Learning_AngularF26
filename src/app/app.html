@@ -3,7 +3,7 @@
     <div class="course-card">
       <h1>{{course.title}}</h1>
       <p>{{course.description}}</p>
-      <p id="course-price">{{course.price}}</p>
+      <p id="course-price">${{course.price}}</p>
       <p>Sold Out? {{course.soldOut ? "Yes" : "No"}}</p>
       @if(course.price < 150 ){
         <div class="special-offer">Special Offer</div>
