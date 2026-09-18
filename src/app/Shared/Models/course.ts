@@ -5,6 +5,6 @@ export interface Course {
   title: string,
   description: string,
   price: number,
-  hasNewLocations?: boolean,
+  hasNewCourses?: boolean,
   soldOut: true,
 }
