@@ -28,7 +28,7 @@ export class App {
       description: 'Angular is a framework maintained by Google',
       price: 200,
       hasNewCourses: true,
-      soldOut: true,
+      soldOut: true
     },
   ];
 
