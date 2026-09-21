@@ -39,7 +39,5 @@ export class App {
     },
   ];
 
-  courseInfo(course: string): void {
-    alert(`The course you are taking is ${course}`);
-  }
+
 }
