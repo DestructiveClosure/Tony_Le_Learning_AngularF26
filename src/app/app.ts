@@ -19,7 +19,7 @@ export class App {
       title: 'Advanced React',
       description: 'React is a library created by Meta',
       price: 100,
-      hasNewLocations: false,
+      hasNewCourses: false,
       soldOut: true,
     },
     {
@@ -27,8 +27,8 @@ export class App {
       title: 'Advanced Angular',
       description: 'Angular is a framework maintained by Google',
       price: 200,
-      hasNewLocations: true,
-      soldOut: true
+      hasNewCourses: true,
+      soldOut: true,
     },
   ];
 
