@@ -5,11 +5,11 @@
       <p>{{course.description}}</p>
       <p id="course-price">{{course.price}}</p>
       <p>Sold Out? {{course.soldOut ? "Yes" : "No"}}</p>
-      @if(course.price < 200 ){
+      @if(course.price < 150 ){
         <div class="special-offer">Special Offer</div>
       }
       @if(course.hasNewLocations){
-        <div class="new-courses">New Course</div>
+        <div class="new-courses">New Courses</div>
       }
       <button (click)="courseInfo(course.title)">View Details</button>
     </div>

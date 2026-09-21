@@ -20,9 +20,9 @@
   margin-bottom: 1rem;
   font-size: 1.2rem;
   font-weight: 500;
-  border-bottom: 1px solid #B2DFDB;
+  border-bottom: 1px solid #b0b7bc;
   width: fit-content;
-  color: #3CB371;
+  color: #fff;
 }
 
 .course-card{
@@ -30,13 +30,9 @@
   padding: 1rem;
   flex-direction: column;
   gap: 10px;
-  border: 2px solid #B2DFDB;
+  background-color: #0076b6;
   border-radius: 10px;
-  transition: 0.3s ease-in-out all;
-}.course-card:hover{
-   background-color: #bbcfce4b;
-   border-color: #a5ddca;
- }
+}
 
 .course-card p {
   font-size: 20px;
@@ -50,25 +46,21 @@
 }
 
 #course-price{
-  color: #4CAF50;
+  color: lightgreen;
   font-weight: bold;
 }
 
 button{
   width: 150px;
   height: 50px;
-  background-color: #3CB371;
+  background-color: #b0b7bc;
   border: 0;
   outline: 0;
   border-radius: 3px;
   font-size: 1.3rem;
-  color: #FFF;
-  transition: 0.3s ease-in background-color;
-  cursor: pointer;
+  color: navy;
 }
-button:hover{
-  background-color: #2d8856;
-}
+
 .new-courses{
   background-color: #FFFF8F;
   width: fit-content;
