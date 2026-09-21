@@ -9,9 +9,10 @@ import {Course} from './Shared/Models/course';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('TonyLeLearningAngularF26');
-  name: string = 'Tony';
-  height: number = 5.11;
+  // Assignment 1
+  // protected readonly title = signal('TonyLeLearningAngularF26');
+  // name: string = 'Tony';
+  // height: number = 5.11;
 
   courses: Course[] = [
     {
@@ -19,16 +20,23 @@ export class App {
       title: 'Advanced React',
       description: 'React is a library created by Meta',
       price: 100,
-      hasNewLocations: false,
       soldOut: true,
     },
     {
       id: 2,
       title: 'Advanced Angular',
       description: 'Angular is a framework maintained by Google',
-      price: 200,
+      price: 150,
       hasNewLocations: true,
-      soldOut: true
+      soldOut: true,
+    },
+    {
+      id: 3,
+      title: 'Advanced Linux',
+      description: 'Linux is an open-source operating system',
+      price: 250,
+      hasNewLocations: true,
+      soldOut: true,
     },
   ];
 
