@@ -8,3 +8,11 @@ export interface Course {
   hasNewCourses?: boolean,
   soldOut: true,
 }
+
+/*
+
+export interface Course{
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+}
+
+ */

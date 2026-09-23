@@ -19,7 +19,6 @@ export class App {
       title: 'Advanced React',
       description: 'React is a library created by Meta',
       price: 100,
-      hasNewCourses: false,
       soldOut: true,
     },
     {
@@ -28,11 +27,17 @@ export class App {
       description: 'Angular is a framework maintained by Google',
       price: 200,
       hasNewCourses: true,
+      soldOut: true
+    },
+    {
+      id: 3,
+      title: 'Advanced C#',
+      description: 'Learn Unity by Building Games',
+      price: 250,
+      hasNewCourses: true,
       soldOut: true,
     },
   ];
 
-  courseInfo(course: string): void {
-    alert(`The course you are taking is ${course}`);
-  }
+
 }
