@@ -1,4 +1,4 @@
-<div class="course-card">
+<div class="course-card" (click)="toggle()">
     <h2>{{course().title}}</h2>
     <p>{{course().description}}</p>
     <p id="course-price">{{course().price}}</p>
@@ -25,5 +25,4 @@
             <span class="default">No type disclosed</span>
         }
     }
-
 </div>

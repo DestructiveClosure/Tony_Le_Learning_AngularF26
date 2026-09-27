@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Course } from '../Shared/Models/course';
 import { CourseListItem } from '../course-list-item/course-list-item';
+import { CourseEvent } from '../Shared/Models/course-event';
 
 @Component({
   imports: [CourseListItem],
@@ -18,7 +19,8 @@ export class CourseList {
         price: 100,
         hasNewCourses: false,
         soldOut: true,
-        type: "Foundational"
+        type: "Foundational",
+        action: 'favourited'
       },
       {
         id: 2,
@@ -27,7 +29,8 @@ export class CourseList {
         price: 200,
         hasNewCourses: true,
         soldOut: true,
-        type: "Intermediate"
+        type: "Intermediate",
+        action: 'favourited'
       },
       {
         id: 3,
@@ -36,7 +39,8 @@ export class CourseList {
         price: 300,
         hasNewCourses: true,
         soldOut: true,
-        type: "Foundational"
+        type: "Foundational",
+        action: 'opened'
       },
       {
         id: 4,
@@ -45,8 +49,12 @@ export class CourseList {
         price: 400,
         hasNewCourses: true,
         soldOut: true,
-        type: "Advanced"
+        type: "Advanced",
+        action: 'opened'
       },
     ];
-
+    
+    onCourseOpen(course: CourseEvent): void{
+      console.log("Course opened: ", course.action);
+    }
 }

@@ -15,7 +15,7 @@
             }
             
         </div> -->
-        <app-course-list-item [course]="course"></app-course-list-item>
+        <app-course-list-item [course]="course" (clicked)="onCourseOpen($event)"></app-course-list-item>
     }@empty{
         <div>There are no courses available at this time</div>
     }

@@ -4,7 +4,7 @@ import {Course} from './Shared/Models/course';
 import { CourseList } from './course-list/course-list';
 
 @Component({
-  imports: [RouterOutlet, CourseList],
+  imports: [CourseList],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
