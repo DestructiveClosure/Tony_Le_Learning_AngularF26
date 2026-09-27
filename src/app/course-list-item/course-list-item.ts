@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Course } from '../Shared/Models/course';
 
 @Component({
   imports: [],
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './course-list-item.css',
   templateUrl: './course-list-item.html',
 })
-export class CourseListItem {}
+export class CourseListItem {
+    // Two-way data binding
+    // Since every item must be provided, use input.required<IContent>()
+    course = input.required<Course>();
+}
