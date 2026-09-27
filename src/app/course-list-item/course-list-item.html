@@ -1,7 +1,7 @@
 <div class="course-card" (click)="toggle()">
     <h2>{{course().title}}</h2>
     <img class="course-img" src="{{course().img}}" alt="{{course().title}}">
-    <p>{{course().description}}</p>
+    <p class="course-desc">{{course().description}}</p>
     <p id="course-price">{{course().price}}</p>
     <p>Sold Out? {{course().soldOut ? "Yes" : "No"}}</p>
     @if(course().price < 150 ){
