@@ -20,7 +20,7 @@ export class App {
       description: 'React is a library created by Meta',
       price: 100,
       hasNewCourses: false,
-      soldOut: true,
+      soldOut: true
     },
     {
       id: 2,
