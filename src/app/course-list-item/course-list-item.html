@@ -5,7 +5,13 @@
 {{even() ? 'course-card even' : 'course-card'}}
 " (click)="toggle()">
     <h2>{{course().title}}</h2>
-    <div class="course-count">Showing {{index() + 1}} / {{count()}} courses</div>
+    <div class="course-count">
+        @if(first()){
+            Our First Course!
+        }@else{
+            Showing {{index() + 1}} / {{count()}} courses
+        }
+    </div>
     <img class="course-img" src="{{course().img}}" alt="{{course().title}}">
     <p class="course-desc">{{course().description}}</p>
     <p id="course-price">{{course().price}}</p>

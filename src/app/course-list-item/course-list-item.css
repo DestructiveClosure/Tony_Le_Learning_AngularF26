@@ -31,6 +31,10 @@ h2{
 
 .course-card.first{
   border: 3px solid #3CB371;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}.course-card.first:hover{
+  box-shadow: 3px 3px 4px rgba(0,0,0,0.3);
 }
 
 .course-card.last{
