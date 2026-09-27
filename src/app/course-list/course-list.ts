@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Course } from '../Shared/Models/course';
+import { CourseListItem } from '../course-list-item/course-list-item';
 
 @Component({
-  imports: [],
+  imports: [CourseListItem],
   selector: 'app-course-list',
   styleUrl: './course-list.css',
   templateUrl: './course-list.html',
@@ -16,7 +17,8 @@ export class CourseList {
         description: 'React is a library created by Meta',
         price: 100,
         hasNewCourses: false,
-        soldOut: true
+        soldOut: true,
+        type: "Foundational"
       },
       {
         id: 2,
@@ -24,23 +26,26 @@ export class CourseList {
         description: 'Angular is a framework maintained by Google',
         price: 200,
         hasNewCourses: true,
-        soldOut: true
+        soldOut: true,
+        type: "Intermediate"
       },
       {
         id: 3,
         title: 'Foundational TypeScript',
         description: 'TypeScript is a superset type-safe language that is very popular.',
-        price: 200,
+        price: 300,
         hasNewCourses: true,
-        soldOut: true
+        soldOut: true,
+        type: "Foundational"
       },
       {
         id: 4,
-        title: 'Intermediate TypeScript',
+        title: 'Advanced TypeScript',
         description: 'Generics, Intersection Types and more.',
-        price: 200,
+        price: 400,
         hasNewCourses: true,
-        soldOut: true
+        soldOut: true,
+        type: "Advanced"
       },
     ];
 

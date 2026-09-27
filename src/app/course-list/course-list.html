@@ -1,1 +1,22 @@
-<p>COURSE LIST WORKS</p>
+<h1>Course List</h1>
+
+<div class="course-card-wrapper">
+    @for (course of courses; track course.id){
+        <!-- <div class="course-card">
+            <h2>{{course.title}}</h2>
+            <p>{{course.description}}</p>
+            <p id="course-price">{{course.price}}</p>
+            <p>Sold Out? {{course.soldOut ? "Yes" : "No"}}</p>
+            @if(course.price < 150 ){
+                <div class="special-offer">Special Offer</div>
+            }
+            @if(course.hasNewCourses){
+                <div class="new-courses">New Courses</div>
+            }
+            
+        </div> -->
+        <app-course-list-item [course]="course"></app-course-list-item>
+    }@empty{
+        <div>There are no courses available at this time</div>
+    }
+</div>

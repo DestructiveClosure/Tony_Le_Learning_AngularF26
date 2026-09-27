@@ -7,4 +7,5 @@ export interface Course {
   price: number,
   hasNewCourses?: boolean,
   soldOut: true,
+  type?: string,
 }
