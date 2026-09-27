@@ -3,6 +3,7 @@ import { Course } from '../Shared/Models/course';
 import { CourseListItem } from '../course-list-item/course-list-item';
 import { CourseEvent } from '../Shared/Models/course-event';
 
+
 @Component({
   imports: [CourseListItem],
   selector: 'app-course-list',
@@ -20,7 +21,8 @@ export class CourseList {
         hasNewCourses: false,
         soldOut: true,
         type: "Foundational",
-        action: 'favourited'
+        action: 'favourited',
+        img: './angular.png'
       },
       {
         id: 2,
@@ -30,7 +32,8 @@ export class CourseList {
         hasNewCourses: true,
         soldOut: true,
         type: "Intermediate",
-        action: 'favourited'
+        action: 'favourited',
+        img: './realDevelopment.png'
       },
       {
         id: 3,
@@ -40,7 +43,8 @@ export class CourseList {
         hasNewCourses: true,
         soldOut: true,
         type: "Foundational",
-        action: 'opened'
+        action: 'opened',
+        img: './realDevelopmentTypeScript.png'
       },
       {
         id: 4,
@@ -50,7 +54,8 @@ export class CourseList {
         hasNewCourses: true,
         soldOut: true,
         type: "Advanced",
-        action: 'opened'
+        action: 'opened',
+        img: './realDevelopmentTypeScript2.png'
       },
     ];
     

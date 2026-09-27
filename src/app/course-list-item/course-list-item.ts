@@ -2,6 +2,8 @@ import { Component, input, output } from '@angular/core';
 import { Course } from '../Shared/Models/course';
 import { CourseEvent } from '../Shared/Models/course-event';
 
+
+
 @Component({
   imports: [],
   selector: 'app-course-list-item',

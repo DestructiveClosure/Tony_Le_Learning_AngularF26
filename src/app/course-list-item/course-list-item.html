@@ -1,5 +1,6 @@
 <div class="course-card" (click)="toggle()">
     <h2>{{course().title}}</h2>
+    <img class="course-img" src="{{course().img}}" alt="{{course().title}}">
     <p>{{course().description}}</p>
     <p id="course-price">{{course().price}}</p>
     <p>Sold Out? {{course().soldOut ? "Yes" : "No"}}</p>
@@ -26,3 +27,13 @@
         }
     }
 </div>
+<!-- 
+Questions:
+
+Did I implement the output() method correctly with the typed interface.
+I've consoled the action depending on the click of the course
+How do I get the even and odd variables from the CourseList template (for loop) to the actual card where the content is?
+Currently, I have the live total showing on top of each card because I can't get the variables that are nested inside the for loop to be accessible in my ListItem template
+
+
+-->

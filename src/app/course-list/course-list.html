@@ -1,7 +1,6 @@
 <h1>Course List</h1>
-
 <div class="course-card-wrapper">
-    @for (course of courses; track course.id){
+    @for (course of courses; track course.id; let idx = $index, count = $count, first = $first, last = $last, even=$even, odd=$odd){
         <!-- <div class="course-card">
             <h2>{{course.title}}</h2>
             <p>{{course.description}}</p>
@@ -15,6 +14,13 @@
             }
             
         </div> -->
+        <div class="course-count">Showing {{idx + 1}} / {{count}} courses</div>
+        @if(first){
+            <div class="first-course">{{first ? "First Listing 🚀" : ""}}</div>
+        }
+        @if(last){
+            <div class="last-course">{{last ? "Last Listing" : ""}}</div>
+        }
         <app-course-list-item [course]="course" (clicked)="onCourseOpen($event)"></app-course-list-item>
     }@empty{
         <div>There are no courses available at this time</div>

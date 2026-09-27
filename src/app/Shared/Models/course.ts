@@ -8,5 +8,6 @@ export interface Course {
   hasNewCourses?: boolean,
   soldOut: true,
   type?: string,
-  action?: 'opened' | 'favourited'
+  action?: 'opened' | 'favourited',
+  img?: string,
 }
