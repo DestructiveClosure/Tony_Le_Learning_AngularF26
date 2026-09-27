@@ -29,6 +29,23 @@ h2{
     gap: 1rem;
 }
 
+.course-card.first{
+  border: 3px solid #3CB371;
+}
+
+.course-card.last{
+  border-bottom: none;
+  border-right: none;
+}
+
+.course-card.odd{
+  background-color: #e9f5f1;
+}
+
+.course-card.even{
+  background-color: #d0f4ff;
+}
+
 .course-card{
   display: flex;
   padding: 1rem;
@@ -37,9 +54,6 @@ h2{
   border: 2px solid #B2DFDB;
   border-radius: 10px;
   transition: 0.3s ease-in-out all;
-}.course-card:hover{
-    background-color: #bbcfce4b;
-    border-color: #a5ddca;
 }
 
 .course-card p {
@@ -119,6 +133,17 @@ button:hover{
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 3px;
+}
+
+.course-count{
+  border-right: 2px solid #2a93a1;
+  border-bottom: 2px solid #2a93a1;
+  width: fit-content;
+  padding: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+  border-radius: 2px;
 }
 
 .course-img{

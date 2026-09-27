@@ -14,14 +14,7 @@
             }
             
         </div> -->
-        <div class="course-count">Showing {{idx + 1}} / {{count}} courses</div>
-        @if(first){
-            <div class="first-course">{{first ? "First Listing 🚀" : ""}}</div>
-        }
-        @if(last){
-            <div class="last-course">{{last ? "Last Listing" : ""}}</div>
-        }
-        <app-course-list-item [course]="course" (clicked)="onCourseOpen($event)"></app-course-list-item>
+        <app-course-list-item [course]="course" [count]="count" [last]="last" [even]="even" [odd]="odd" [index]="idx" [first]="first" (clicked)="onCourseOpen($event)"></app-course-list-item>
     }@empty{
         <div>There are no courses available at this time</div>
     }
