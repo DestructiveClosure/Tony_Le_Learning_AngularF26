@@ -29,6 +29,13 @@ h2{
     gap: 1rem;
 }
 
+.first-course-wrapper{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
 .course-card.first{
   border: 3px solid #3CB371;
   transition: all 0.3s ease-in-out;
@@ -42,7 +49,7 @@ h2{
   padding: 2px 3px;
   border-radius: 2px;
   color: rgba(240, 248, 255, 0.952);
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 
 .course-card.last{
@@ -82,6 +89,7 @@ h2{
 #course-price{
   color: #4CAF50;
   font-weight: bold;
+  font-size: 2rem !important;
 }
 
 button{

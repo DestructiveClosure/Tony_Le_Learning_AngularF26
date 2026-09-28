@@ -7,14 +7,17 @@
     <h2>{{course().title}}</h2>
     <div class="course-count">
         @if(first()){
-            <span class="first-course">First Course</span>
+            <div class="first-course-wrapper">
+                <span class="first-course">🥇</span>
+                Showing {{index() + 1}} / {{count()}} courses
+            </div>
         }@else{
             Showing {{index() + 1}} / {{count()}} courses
         }
     </div>
     <img class="course-img" src="{{course().img}}" alt="{{course().title}}">
     <p class="course-desc">{{course().description}}</p>
-    <p id="course-price">{{course().price}}</p>
+    <p id="course-price">${{course().price}}</p>
     <p>Sold Out? {{course().soldOut ? "Yes" : "No"}}</p>
     @if(course().price < 150 ){
         <div class="special-offer">Special Offer</div>
