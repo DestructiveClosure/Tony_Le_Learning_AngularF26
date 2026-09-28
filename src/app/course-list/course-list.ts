@@ -60,6 +60,8 @@ export class CourseList {
     ];
     
     onCourseOpen(course: CourseEvent): void{
-      console.log("Course opened: ", course.action);
+      console.log("===============\n")
+      console.log("ID: " + course.id + "\nACTION: " + course.action);
+      console.log("===============\n")
     }
 }

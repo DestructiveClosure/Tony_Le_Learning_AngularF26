@@ -7,7 +7,7 @@
     <h2>{{course().title}}</h2>
     <div class="course-count">
         @if(first()){
-            Our First Course!
+            <span class="first-course">First Course</span>
         }@else{
             Showing {{index() + 1}} / {{count()}} courses
         }
