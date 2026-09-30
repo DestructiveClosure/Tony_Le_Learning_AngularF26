@@ -18,12 +18,12 @@ export class CourseList {
     protected courses = this.courseServ.courses;
 
     protected courseCount = this.courseServ.courseCount;
-    
+
     filteredCourse = computed(() => this.courses().filter((course) => { course.type === "Advanced"; }));
     constructor() {
       effect(() => {
         console.log("Course count: " + this.courseCount());
-        console.log("Filtered Courses: " + this.filteredCourse())
+        console.log("Filtered Courses: " + this.filteredCourse());
       });
     }
 
