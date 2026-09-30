@@ -166,6 +166,14 @@ button:hover{
   border-radius: 2px;
 }
 
+.first-course{
+  background-color: #2a93a1;
+  padding: 3px 4px;
+  border-radius: 2px;
+  font-size: 2rem;
+  color: white;
+}
+
 .course-img{
   width: 220px;
 }
