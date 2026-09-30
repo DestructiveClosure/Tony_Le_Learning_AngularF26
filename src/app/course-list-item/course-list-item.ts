@@ -14,6 +14,7 @@ import { CourseService } from '../services/course-service';
 export class CourseListItem {
     // Two-way data binding
     // Since every item must be provided, use input.required<IContent>()
+    
     course = input.required<Course>();
     first = input.required<boolean>();
     last = input.required<boolean>();
@@ -22,13 +23,11 @@ export class CourseListItem {
     index = input.required<number>();
     count = input.required<number>();
     clicked = output<CourseEvent>();
-    removed = output<CourseEvent>();
     
 
-    removeCourse(id: any): void{
-      this.removed.emit(this.course());
+    constructor(){
+      console.log(`====From the ITEM====`)
     }
-
 
     toggle(): void{
       this.clicked.emit(this.course());

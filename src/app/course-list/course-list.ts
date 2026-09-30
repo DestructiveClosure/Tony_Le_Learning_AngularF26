@@ -18,26 +18,16 @@ export class CourseList {
   protected courses = this.courseServ.courses;
 
   protected courseCount = this.courseServ.courseCount;
-  /**
-   * Comment from Matt
-   * Your braces here cause the results to get thrown away
-   * Youre treating it as an expression and in reality its a ststement so the curly
-   * brackets you have do let the expression run - however immedatly get thrown away and make
-   * the whole statment return false
-   *
-   * Your OLD way
-   *
-   *   filteredCourse = computed(() =>
-   *       this.courses().filter((course) => { course.type === "Advanced"; }));
-   *
-   *       working way below
-   */
+
   filteredCourse = computed(() =>
     this.courses().filter(course => course.type === 'Advanced'));
+  filteredCourseLength = computed(() => this.filteredCourse().length);
 
+  // Initializing the removeSingleCourse method to use
   protected removeSingleCourse = this.courseServ.removeCourse;
 
   constructor() {
+    console.log(`===From the LIST===`)
     console.log(`Removed Single Course:\n`, this.removeSingleCourse);
     effect(() => {
       console.log('Course count:\n' + this.courseCount());
@@ -45,9 +35,13 @@ export class CourseList {
     });
   }
 
-  onCourseOpen(course: CourseEvent): void {
-    console.log('===============\n');
-    console.log('ID: ' + course.id + '\nACTION: ' + course.action);
-    console.log('===============\n');
+  onCourseRemove(course: CourseEvent): void {
+    // this.removeSingleCourse(course.id);
+    console.log("=============================\n")
+    console.log(`Course ID: ${course.id}\nCourse Action: ${course.action}`)
+    console.log("=============================\n")
+    this.removeSingleCourse(course.id);
   }
+
+
 }

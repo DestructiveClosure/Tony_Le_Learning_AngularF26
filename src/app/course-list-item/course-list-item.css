@@ -184,6 +184,8 @@ button:hover{
   background-color: rgb(104, 1, 1);
 }
 
+
+
 @media (max-width: 400px) {
   .container h1 {
     font-size: 2rem;

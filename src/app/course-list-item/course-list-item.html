@@ -3,7 +3,7 @@
 {{last() ? 'course-card last' : 'course-card'}}
 {{odd() ? 'course-card odd' : 'course-card'}}
 {{even() ? 'course-card even' : 'course-card'}}
-" (click)="toggle()">
+" >
     <h2>{{course().title}}</h2>
     <div class="course-count">
         @if(first()){
@@ -41,5 +41,6 @@
             <span class="default">No type disclosed</span>
         }
     }
-    <button (click)="removeCourse(course().id)" class="remove-btn">Remove</button>
+    
+    <button (click)="toggle()" class="remove-btn">Remove</button>
 </div>

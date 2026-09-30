@@ -1,8 +1,8 @@
 <h1>Course List</h1>
 <div class="featured-wrapper">
-    @for(fCourse of filteredCourse(); track fCourse.id){
+    @for(fCourse of filteredCourse(); track fCourse.id; let idx = $index){
         <div class="filteredCourse-wrapper">
-            <h2 class="featured-course">Featured Course</h2>
+            <h2 class="featured-course">{{idx + 1}} / {{filteredCourseLength()}} Featured Courses</h2>
             <p>
                 <span class="emphasis-course">Course: </span>
                 {{fCourse.title}}
@@ -24,7 +24,7 @@
 <!-- <p class="course-counter">{{courseCount()}} courses available</p> -->
 <div class="course-card-wrapper">
     @for (course of courses(); track course.id; let idx = $index, count = $count, first = $first, last = $last, even=$even, odd=$odd){
-        <app-course-list-item [course]="course" [count]="count" [last]="last" [even]="even" [odd]="odd" [index]="idx" [first]="first" (clicked)="onCourseOpen($event)" (removed)="removeSingleCourse($event)"></app-course-list-item>
+        <app-course-list-item [course]="course" [count]="count" [last]="last" [even]="even" [odd]="odd" [index]="idx" [first]="first" (clicked)="onCourseRemove($event)"></app-course-list-item>
     }@empty{
         <div>There are no courses available at this time</div>
     }

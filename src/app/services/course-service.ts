@@ -17,12 +17,12 @@ export class CourseService {
       },
       {
         id: 2,
-        title: 'Intermediate Angular',
+        title: 'Advanced Angular',
         description: 'Angular is a framework maintained by Google',
         price: 200,
         hasNewCourses: true,
         soldOut: true,
-        type: "Intermediate",
+        type: "Advanced",
         action: 'favourited',
         img: './realDevelopment.png'
       },
@@ -58,8 +58,8 @@ export class CourseService {
         this.courseList.update((oldArr) => [...oldArr, c]);
     }
 
-    removeCourse(id: any): void {
-        console.log(`Course ID: ${id}`)
+    removeCourse(id: number): void {
+        console.log(`Hello from the RemoveMethod\nThe Course ID: ${id}`);
         this.courseList.update(list => list.filter(i => i.id !== id));
     }
 }
