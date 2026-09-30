@@ -3,7 +3,7 @@ import { Course } from '../Shared/Models/course';
 import { CourseListItem } from '../course-list-item/course-list-item';
 import { CourseEvent } from '../Shared/Models/course-event';
 import { createStructuredContentOutput } from '@angular/cli/src/commands/mcp/utils';
-import CourseService from '../services/course-service';
+import { CourseService } from '../services/course-service';
 
 
 @Component({
@@ -17,11 +17,11 @@ export class CourseList {
 
     protected courses = this.courseServ.courses;
 
-    protected courseCount = this.courseServ.courseCount;
+    
     constructor() {
-      effect(() => {
-        console.log("Course count: " + this.courseCount());
-      });
+      // effect(() => {
+      //   console.log("Course count: " + this.courseCount());
+      // });
     }
 
 
