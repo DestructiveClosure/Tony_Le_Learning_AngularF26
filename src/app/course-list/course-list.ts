@@ -17,11 +17,14 @@ export class CourseList {
 
     protected courses = this.courseServ.courses;
 
+    protected courseCount = this.courseServ.courseCount;
+    protected filtered = this.courseServ.filteredCourse;
     
     constructor() {
-      // effect(() => {
-      //   console.log("Course count: " + this.courseCount());
-      // });
+      effect(() => {
+        console.log("Course count: " + this.courseCount());
+        console.log("Filtered Courses: " + this.filtered())
+      });
     }
 
 

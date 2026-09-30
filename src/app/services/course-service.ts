@@ -1,4 +1,4 @@
-import { Service, signal } from '@angular/core';
+import { computed, Service, signal } from '@angular/core';
 import { Course } from '../Shared/Models/course';
 
 @Service()
@@ -51,7 +51,10 @@ export class CourseService {
     ]);
 
     courses = this.courseList.asReadonly();
+
+    courseCount = computed(() => this.courseList().length)
   
+    filteredCourse = computed(() => this.courseList().filter((course) => { course.id === 4; }));
 
     addCourse(c: Course): void {
         this.courseList.update((oldArr) => [...oldArr, c]);
