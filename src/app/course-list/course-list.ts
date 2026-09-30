@@ -13,20 +13,34 @@ import { CourseService } from '../services/course-service';
   templateUrl: './course-list.html',
 })
 export class CourseList {
-    private courseServ = inject(CourseService);
+  private courseServ = inject(CourseService);
 
-    protected courses = this.courseServ.courses;
+  protected courses = this.courseServ.courses;
 
-    protected courseCount = this.courseServ.courseCount;
+  protected courseCount = this.courseServ.courseCount;
+  /**
+   * Comment from Matt
+   * Your braces here cause the results to get thrown away
+   * Youre treating it as an expression and in reality its a ststement so the curly
+   * brackets you have do let the expression run - however immedatly get thrown away and make
+   * the whole statment return false
+   *
+   * Your OLD way
+   *
+   *   filteredCourse = computed(() =>
+   *       this.courses().filter((course) => { course.type === "Advanced"; }));
+   *
+   *       working way below
+   */
+  filteredCourse = computed(() =>
+    this.courses().filter(course => course.type === 'Advanced'));
 
-    filteredCourse = computed(() => this.courses().filter((course) => { course.type === "Advanced"; }));
-    constructor() {
-      effect(() => {
-        console.log("Course count: " + this.courseCount());
-        console.log("Filtered Courses: " + this.filteredCourse());
-      });
-    }
-
+  constructor() {
+    effect(() => {
+      console.log('Course count: ' + this.courseCount());
+      console.log('Filtered Courses: ' + this.filteredCourse());
+    });
+  }
 
   // courses: Course[] = [
   //     {
@@ -75,14 +89,13 @@ export class CourseList {
   //     },
   //   ];
 
-    onCourseOpen(course: CourseEvent): void{
+  onCourseOpen(course: CourseEvent): void {
+    console.log('===============\n');
+    console.log('ID: ' + course.id + '\nACTION: ' + course.action);
+    console.log('===============\n');
 
-      console.log("===============\n")
-      console.log("ID: " + course.id + "\nACTION: " + course.action);
-      console.log("===============\n")
-
-      console.log("\n==================================");
-      console.log("Course action: ", course.action + "\nCourse ID: " + course.id + "\n");
-      console.log('==================================');
-    }
+    console.log('\n==================================');
+    console.log('Course action: ', course.action + '\nCourse ID: ' + course.id + '\n');
+    console.log('==================================');
+  }
 }
