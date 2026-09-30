@@ -1,7 +1,7 @@
 <h1>Course List</h1>
 <!-- <p class="course-counter">{{courseCount()}} courses available</p> -->
 <div class="course-card-wrapper">
-    @for (course of courses; track course.id; let idx = $index, count = $count, first = $first, last = $last, even=$even, odd=$odd){
+    @for (course of courses(); track course.id; let idx = $index, count = $count, first = $first, last = $last, even=$even, odd=$odd){
         <app-course-list-item [course]="course" [count]="count" [last]="last" [even]="even" [odd]="odd" [index]="idx" [first]="first" (clicked)="onCourseOpen($event)"></app-course-list-item>
     }@empty{
         <div>There are no courses available at this time</div>

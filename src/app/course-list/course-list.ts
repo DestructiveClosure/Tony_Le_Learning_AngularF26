@@ -1,4 +1,4 @@
-import { Component, inject, effect } from '@angular/core';
+import { Component, inject, effect, computed } from '@angular/core';
 import { Course } from '../Shared/Models/course';
 import { CourseListItem } from '../course-list-item/course-list-item';
 import { CourseEvent } from '../Shared/Models/course-event';
@@ -18,12 +18,12 @@ export class CourseList {
     protected courses = this.courseServ.courses;
 
     protected courseCount = this.courseServ.courseCount;
-    protected filtered = this.courseServ.filteredCourse;
     
+    filteredCourse = computed(() => this.courses().filter((course) => { course.type === "Advanced"; }));
     constructor() {
       effect(() => {
         console.log("Course count: " + this.courseCount());
-        console.log("Filtered Courses: " + this.filtered())
+        console.log("Filtered Courses: " + this.filteredCourse())
       });
     }
 
@@ -76,14 +76,13 @@ export class CourseList {
   //   ];
 
     onCourseOpen(course: CourseEvent): void{
-<<<<<<< HEAD
+
       console.log("===============\n")
       console.log("ID: " + course.id + "\nACTION: " + course.action);
       console.log("===============\n")
-=======
+
       console.log("\n==================================");
       console.log("Course action: ", course.action + "\nCourse ID: " + course.id + "\n");
       console.log('==================================');
->>>>>>> 75c563e42e41afab435ca686aa8083bfaed0e9ac
     }
 }
