@@ -54,7 +54,7 @@ export class CourseService {
 
     courseCount = computed(() => this.courseList().length)
   
-    filteredCourse = computed(() => this.courseList().filter((course) => { course.id === 4; }));
+    filteredCourse = computed(() => this.courseList().filter((course) => { course.type === "Advanced"; }));
 
     addCourse(c: Course): void {
         this.courseList.update((oldArr) => [...oldArr, c]);
