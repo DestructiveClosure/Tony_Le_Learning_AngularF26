@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Course } from '../Shared/Models/course';
 import { CourseListItem } from '../course-list-item/course-list-item';
 import { CourseEvent } from '../Shared/Models/course-event';
+import { createStructuredContentOutput } from '@angular/cli/src/commands/mcp/utils';
 
 
 @Component({
@@ -58,8 +59,10 @@ export class CourseList {
         img: './realDevelopmentTypeScript2.png'
       },
     ];
-    
+
     onCourseOpen(course: CourseEvent): void{
-      console.log("Course opened: ", course.action);
+      console.log("==================================");
+      console.log("Course action: ", course.action + "\nCourse ID: " + course.id + "\n");
+      console.log('==================================');
     }
 }

@@ -1,19 +1,6 @@
 <h1>Course List</h1>
 <div class="course-card-wrapper">
     @for (course of courses; track course.id; let idx = $index, count = $count, first = $first, last = $last, even=$even, odd=$odd){
-        <!-- <div class="course-card">
-            <h2>{{course.title}}</h2>
-            <p>{{course.description}}</p>
-            <p id="course-price">{{course.price}}</p>
-            <p>Sold Out? {{course.soldOut ? "Yes" : "No"}}</p>
-            @if(course.price < 150 ){
-                <div class="special-offer">Special Offer</div>
-            }
-            @if(course.hasNewCourses){
-                <div class="new-courses">New Courses</div>
-            }
-            
-        </div> -->
         <app-course-list-item [course]="course" [count]="count" [last]="last" [even]="even" [odd]="odd" [index]="idx" [first]="first" (clicked)="onCourseOpen($event)"></app-course-list-item>
     }@empty{
         <div>There are no courses available at this time</div>
