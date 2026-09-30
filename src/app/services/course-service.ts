@@ -52,11 +52,14 @@ export class CourseService {
 
     courses = this.courseList.asReadonly();
 
-    courseCount = computed(() => this.courseList().length)
-  
-    
+    courseCount = computed(() => this.courseList().length);
 
     addCourse(c: Course): void {
         this.courseList.update((oldArr) => [...oldArr, c]);
+    }
+
+    removeCourse(id: any): void {
+        console.log(`Course ID: ${id}`)
+        this.courseList.update(list => list.filter(i => i.id !== id));
     }
 }

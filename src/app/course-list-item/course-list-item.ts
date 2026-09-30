@@ -1,6 +1,7 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { Course } from '../Shared/Models/course';
 import { CourseEvent } from '../Shared/Models/course-event';
+import { CourseService } from '../services/course-service';
 
 
 
@@ -21,6 +22,13 @@ export class CourseListItem {
     index = input.required<number>();
     count = input.required<number>();
     clicked = output<CourseEvent>();
+    removed = output<CourseEvent>();
+    
+
+    removeCourse(id: any): void{
+      this.removed.emit(this.course());
+    }
+
 
     toggle(): void{
       this.clicked.emit(this.course());
