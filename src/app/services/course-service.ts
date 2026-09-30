@@ -46,10 +46,10 @@ export class CourseService {
         soldOut: true,
         type: "Advanced",
         action: 'opened',
-        img: './realDevelopmentTypeScript2.png'
+        img: './realDevelopmentTypeScript2.png',
       },
     ]);
-    
+
     courses = this.courseList.asReadonly();
   
 
