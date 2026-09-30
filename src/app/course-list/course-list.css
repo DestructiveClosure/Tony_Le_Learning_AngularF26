@@ -31,6 +31,16 @@ h2{
   color: #3CB371;
 }
 
+.course-counter{
+  background-color: #3CB371;
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding: 10px;
+  border-radius: 3px;
+  color: aliceblue;
+  font-weight: bold;
+}
+
 .course-card-wrapper{
     display: flex;
     flex-direction: column;
