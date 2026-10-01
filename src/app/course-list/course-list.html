@@ -4,6 +4,7 @@
     <p class="feature-price">Your Price: ${{filteredCourseCost() - discount}}</p>
     <button class="purchase-btn">Purchase</button>
 </section>
+<div class="line"></div>
 <div class="featured-wrapper">
     @for(fCourse of filteredCourse(); track fCourse.id; let idx = $index){
         <div class="filteredCourse-wrapper">
@@ -25,6 +26,7 @@
         </div>
     }
 </div>
+<div class="line"></div>
 <!-- <p class="course-counter">{{courseCount()}} courses available</p> -->
 <div class="course-card-wrapper">
     @for (course of courses(); track course.id; let idx = $index, count = $count, first = $first, last = $last, even=$even, odd=$odd){
