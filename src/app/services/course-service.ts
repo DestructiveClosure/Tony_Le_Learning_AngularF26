@@ -50,8 +50,8 @@ export class CourseService {
       },
     ]);
 
+    
     courses = this.courseList.asReadonly();
-
     courseCount = computed(() => this.courseList().length);
 
     addCourse(c: Course): void {

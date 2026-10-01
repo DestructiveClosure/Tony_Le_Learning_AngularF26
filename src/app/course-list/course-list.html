@@ -1,4 +1,9 @@
 <h1>Course List</h1>
+<section class="feature-double-bundle">
+    <h3>Bundle Featured Courses</h3>
+    <p class="feature-price">Your Price: ${{filteredCourseCost() - discount}}</p>
+    <button class="purchase-btn">Purchase</button>
+</section>
 <div class="featured-wrapper">
     @for(fCourse of filteredCourse(); track fCourse.id; let idx = $index){
         <div class="filteredCourse-wrapper">
@@ -17,7 +22,6 @@
                     <span class="default">No type disclosed</span>
                 }
             }
-            
         </div>
     }
 </div>
