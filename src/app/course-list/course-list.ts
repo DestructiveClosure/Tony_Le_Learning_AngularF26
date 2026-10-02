@@ -26,12 +26,11 @@ export class CourseList {
   filteredCourseCost = computed(() => this.filteredCourse().reduce((acc, curVal) => acc + curVal.price, 0));
   
 
-  // Initializing the removeSingleCourse method to use
-  protected removeSingleCourse = this.courseServ.removeCourse;
+  
 
   constructor() {
     console.log(`===From the LIST===`)
-    console.log(`Removed Single Course:\n`, this.removeSingleCourse);
+    
     console.log(`Filtered Courses Full Cost: `, this.filteredCourseCost())
     effect(() => {
       console.log('Course count:\n' + this.courseCount());
@@ -44,7 +43,7 @@ export class CourseList {
     console.log("=============================\n")
     console.log(`Course ID: ${course.id}\nCourse Action: ${course.action}`)
     console.log("=============================\n")
-    this.removeSingleCourse(course.id);
+    this.courseServ.removeCourse(course.id);
   }
 
 

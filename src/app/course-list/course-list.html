@@ -1,10 +1,18 @@
-<h1>Course List</h1>
+@if(courses().length > 0){
+    <h1>Course List</h1>
+}
 <section class="feature-double-bundle">
-    <h3>Bundle Featured Courses</h3>
-    <p class="feature-price">Your Price: ${{filteredCourseCost() - discount}}</p>
-    <button class="purchase-btn">Purchase</button>
+    @if(filteredCourseCost() <= 200){
+        <h3>No Bundles Available</h3>
+    }@else{
+        <h3>Bundle Featured Courses</h3>
+        <p class="feature-price">Your Price: ${{filteredCourseCost() - discount}}</p>
+        <button class="purchase-btn">Purchase</button>
+    }
 </section>
-<div class="line"></div>
+@if(courses().length > 0){
+    <div class="line"></div>
+}
 <div class="featured-wrapper">
     @for(fCourse of filteredCourse(); track fCourse.id; let idx = $index){
         <div class="filteredCourse-wrapper">
@@ -26,12 +34,14 @@
         </div>
     }
 </div>
-<div class="line"></div>
+@if(courses().length > 0){
+    <div class="line"></div>
+}
 <!-- <p class="course-counter">{{courseCount()}} courses available</p> -->
 <div class="course-card-wrapper">
     @for (course of courses(); track course.id; let idx = $index, count = $count, first = $first, last = $last, even=$even, odd=$odd){
         <app-course-list-item [course]="course" [count]="count" [last]="last" [even]="even" [odd]="odd" [index]="idx" [first]="first" (clicked)="onCourseRemove($event)"></app-course-list-item>
     }@empty{
-        <div>There are no courses available at this time</div>
+        <p class="no-courses">There are no courses available at this time</p>
     }
 </div>
