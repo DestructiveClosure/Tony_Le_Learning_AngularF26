@@ -18,7 +18,7 @@ export class CourseList {
   protected courses = this.courseServ.courses;
 
   protected courseCount = this.courseServ.courseCount;
-  protected discount = 50.01;
+  protected discount = .85;
 
   filteredCourse = computed(() =>
     this.courses().filter(course => course.type === 'Advanced'));
