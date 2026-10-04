@@ -12,6 +12,7 @@ import { CourseService } from '../services/course-service';
   templateUrl: './course-list-item.html',
 })
 export class CourseListItem {
+    private DEBUG = true;
     // Two-way data binding
     // Since every item must be provided, use input.required<IContent>()
     
@@ -26,7 +27,9 @@ export class CourseListItem {
     
 
     constructor(){
-      console.log(`====From the ITEM====`)
+      if(this.DEBUG){
+        console.log(`====From the ITEM====`);
+      }
     }
 
     toggle(): void{

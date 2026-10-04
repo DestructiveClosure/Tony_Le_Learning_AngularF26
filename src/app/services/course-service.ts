@@ -3,6 +3,7 @@ import { Course } from '../Shared/Models/course';
 
 @Service()
 export class CourseService {
+    private DEBUG = true;
     private courseList = signal<Course[]>([
         {
         id: 1,
@@ -55,11 +56,13 @@ export class CourseService {
     courseCount = computed(() => this.courseList().length);
 
     addCourse(c: Course): void {
-        this.courseList.update((oldArr) => [...oldArr, c]);
+        this.courseList.update(oldArr => [...oldArr, c]);
     }
 
     removeCourse(id: number): void {
-        console.log(`Hello from the RemoveMethod\nThe Course ID: ${id}`);
+        if(this.DEBUG){
+          console.log(`Hello from the RemoveMethod\nThe Course ID: ${id}`);
+        }
         this.courseList.update(list => list.filter(i => i.id !== id));
     }
 }

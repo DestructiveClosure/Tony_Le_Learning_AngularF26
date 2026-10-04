@@ -7,7 +7,7 @@
     }@else{
         <h3>Bundle Featured Courses</h3>
         <p class="feature-price">Your Price: ${{filteredCourseCost() * discount}} <b>(15% off)</b></p>
-        <button class="purchase-btn">Purchase</button>
+        <button (click)="onPurchase()" class="purchase-btn">Purchase</button>
     }
 </section>
 @if(courses().length > 0){

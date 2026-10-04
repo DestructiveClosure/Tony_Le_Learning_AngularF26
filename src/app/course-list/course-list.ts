@@ -13,25 +13,31 @@ import { CourseService } from '../services/course-service';
   templateUrl: './course-list.html',
 })
 export class CourseList {
+  private DEBUG = true;
   private courseServ = inject(CourseService);
 
   protected courses = this.courseServ.courses;
 
   protected courseCount = this.courseServ.courseCount;
   protected discount = .85;
-
+  // Used the filteredCourse and made cards to represent them
   filteredCourse = computed(() =>
     this.courses().filter(course => course.type === 'Advanced'));
+  // Used the length inn the Featured Cards on the top of the application
   filteredCourseLength = computed(() => this.filteredCourse().length);
+
+  // Using this computed value to show a bundle option for the app for a discounted price
   filteredCourseCost = computed(() => this.filteredCourse().reduce((acc, curVal) => acc + curVal.price, 0));
   
 
   
 
   constructor() {
-    console.log(`===From the LIST===`)
+    if(this.DEBUG){
+      console.log(`===From the LIST===`)
+      console.log(`Filtered Courses Full Cost: `, this.filteredCourseCost())
+    }
     
-    console.log(`Filtered Courses Full Cost: `, this.filteredCourseCost())
     effect(() => {
       console.log('Course count:\n' + this.courseCount());
       console.log('Filtered Course:\n', this.filteredCourse());
@@ -40,10 +46,16 @@ export class CourseList {
 
   onCourseRemove(course: CourseEvent): void {
     // this.removeSingleCourse(course.id);
-    console.log("=============================\n")
-    console.log(`Course ID: ${course.id}\nCourse Action: ${course.action}`)
-    console.log("=============================\n")
+    if(this.DEBUG){
+      console.log("=============================\n")
+      console.log(`Course ID: ${course.id}\nCourse Action: ${course.action}`)
+      console.log("=============================\n")
+    }
     this.courseServ.removeCourse(course.id);
+  }
+
+  onPurchase(): void{
+    alert("Bundle purchased successfully.")
   }
 
 
