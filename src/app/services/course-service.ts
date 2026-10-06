@@ -4,6 +4,7 @@ import { Course } from '../Shared/Models/course';
 @Service()
 export class CourseService {
     private DEBUG = true;
+    // Q6.
     private courseList = signal<Course[]>([
         {
         id: 1,
@@ -54,7 +55,7 @@ export class CourseService {
     
     courses = this.courseList.asReadonly();
     courseCount = computed(() => this.courseList().length);
-
+    // Q9. Adds item to list
     addCourse(c: Course): void {
         this.courseList.update(oldArr => [...oldArr, c]);
     }

@@ -14,6 +14,7 @@ import { CourseService } from '../services/course-service';
 })
 export class CourseList {
   private DEBUG = true;
+  // Q7.
   private courseServ = inject(CourseService);
 
   protected courses = this.courseServ.courses;
@@ -23,9 +24,11 @@ export class CourseList {
   // Used the filteredCourse and made cards to represent them
   filteredCourse = computed(() =>
     this.courses().filter(course => course.type === 'Advanced'));
+  // Chain computed off another computed value
   // Used the length inn the Featured Cards on the top of the application
   filteredCourseLength = computed(() => this.filteredCourse().length);
-
+  
+  // ***Bonus Mark***
   // Using this computed value to show a bundle option for the app for a discounted price
   filteredCourseCost = computed(() => this.filteredCourse().reduce((acc, curVal) => acc + curVal.price, 0));
   
@@ -37,7 +40,7 @@ export class CourseList {
       console.log(`===From the LIST===`)
       console.log(`Filtered Courses Full Cost: `, this.filteredCourseCost())
     }
-    
+    // Creating the effect Q11.
     effect(() => {
       console.log('Course count:\n' + this.courseCount());
       console.log('Filtered Course:\n', this.filteredCourse());

@@ -39,6 +39,7 @@
 }
 <!-- <p class="course-counter">{{courseCount()}} courses available</p> -->
 <div class="course-card-wrapper">
+    <!-- Q8: -->
     @for (course of courses(); track course.id; let idx = $index, count = $count, first = $first, last = $last, even=$even, odd=$odd){
         <app-course-list-item [course]="course" [count]="count" [last]="last" [even]="even" [odd]="odd" [index]="idx" [first]="first" (clicked)="onCourseRemove($event)"></app-course-list-item>
     }@empty{
