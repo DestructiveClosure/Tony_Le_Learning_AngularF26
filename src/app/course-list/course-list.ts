@@ -20,6 +20,7 @@ export class CourseList {
   protected courses = this.courseServ.courses;
 
   protected courseCount = this.courseServ.courseCount;
+  // Ensuring there is a discount if user purchases bundle
   protected discount = .85;
   // Used the filteredCourse and made cards to represent them
   filteredCourse = computed(() =>
@@ -38,7 +39,7 @@ export class CourseList {
   constructor() {
     if(this.DEBUG){
       console.log(`===From the LIST===`)
-      console.log(`Filtered Courses Full Cost: `, this.filteredCourseCost())
+      console.log(`Filtered Courses Full Cost: `, this.filteredCourseCost());
     }
     // Creating the effect Q11.
     effect(() => {
