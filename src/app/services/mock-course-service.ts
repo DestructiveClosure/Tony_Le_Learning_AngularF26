@@ -1,0 +1,62 @@
+import { computed, inject, Service, signal, Injectable } from '@angular/core';
+import { Course } from '../Shared/Models/course';
+import { COURSE_CONFIG } from '../Shared/Models/course-config';
+
+@Injectable({ providedIn: 'root' })
+export class MockCourseService {
+    private config = inject(COURSE_CONFIG);
+    
+    private DEBUG = true;
+    // Q6.
+    private courseList = signal<Course[]>([
+        {
+        id: 1,
+        title: 'Foundational Angular',
+        description: 'React is a library created by Meta',
+        price: 100,
+        hasNewCourses: false,
+        soldOut: true,
+        type: "Foundational",
+        action: 'favourited',
+        img: './angular.png'
+      },
+      {
+        id: 2,
+        title: 'Advanced Angular',
+        description: 'Angular is a framework maintained by Google',
+        price: 200,
+        hasNewCourses: true,
+        soldOut: true,
+        type: "Advanced",
+        action: 'favourited',
+        img: './realDevelopment.png'
+      },
+      {
+        id: 3,
+        title: 'Foundational TypeScript',
+        description: 'TypeScript is a superset type-safe language that is very popular.',
+        price: 300,
+        hasNewCourses: true,
+        soldOut: true,
+        type: "Foundational",
+        action: 'opened',
+        img: './realDevelopmentTypeScript.png'
+      },
+      
+    ]);
+
+    
+    courses = this.courseList.asReadonly();
+    courseCount = computed(() => this.courseList().length);
+    // Q9. Adds item to list
+    addCourse(c: Course): void {
+        this.courseList.update(oldArr => [...oldArr, c]);
+    }
+
+    removeCourse(id: number): void {
+        if(this.DEBUG){
+          console.log(`Hello from the RemoveMethod\nThe Course ID: ${id}`);
+        }
+        this.courseList.update(list => list.filter(i => i.id !== id));
+    }
+}
