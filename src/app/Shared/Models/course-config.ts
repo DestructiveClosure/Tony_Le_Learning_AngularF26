@@ -1,7 +1,7 @@
 import {InjectionToken} from "@angular/core";
 
 export interface CourseConfig {
-    apiBaseURL: string,
+    apiBaseUrl: string,
     defaultCategory: string
 }
 

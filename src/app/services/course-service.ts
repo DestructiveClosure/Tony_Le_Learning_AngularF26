@@ -1,8 +1,11 @@
-import { computed, Service, signal } from '@angular/core';
+import { computed, inject, Service, signal, Injectable } from '@angular/core';
 import { Course } from '../Shared/Models/course';
+import { COURSE_CONFIG } from '../Shared/Models/course-config';
 
-@Service()
+@Injectable({ providedIn: 'root' })
 export class CourseService {
+    private config = inject(COURSE_CONFIG);
+    
     private DEBUG = true;
     // Q6.
     private courseList = signal<Course[]>([

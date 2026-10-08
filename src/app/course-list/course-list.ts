@@ -4,6 +4,7 @@ import { CourseListItem } from '../course-list-item/course-list-item';
 import { CourseEvent } from '../Shared/Models/course-event';
 import { createStructuredContentOutput } from '@angular/cli/src/commands/mcp/utils';
 import { CourseService } from '../services/course-service';
+import { COURSE_CONFIG } from '../Shared/Models/course-config';
 
 
 @Component({
@@ -16,6 +17,11 @@ export class CourseList {
   private DEBUG = true;
   // Q7.
   private courseServ = inject(CourseService);
+  
+  private courseConfig = inject(COURSE_CONFIG);
+
+  protected baseURL = this.courseConfig.apiBaseUrl;
+  
 
   protected courses = this.courseServ.courses;
 
@@ -40,9 +46,12 @@ export class CourseList {
     if(this.DEBUG){
       console.log(`===From the LIST===`)
       console.log(`Filtered Courses Full Cost: `, this.filteredCourseCost());
+      console.log(`API BASE URL: `, this.baseURL)
+      
     }
     // Creating the effect Q11.
     effect(() => {
+
       console.log('Course count:\n' + this.courseCount());
       console.log('Filtered Course:\n', this.filteredCourse());
     });
