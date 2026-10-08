@@ -42,7 +42,17 @@ export class MockCourseService {
         action: 'opened',
         img: './realDevelopmentTypeScript.png'
       },
-      
+      {
+        id: 4,
+        title: 'Advanced TypeScript',
+        description: 'Generics, Intersection Types and more.',
+        price: 400,
+        hasNewCourses: true,
+        soldOut: true,
+        type: "Advanced",
+        action: 'opened',
+        img: './realDevelopmentTypeScript2.png',
+      },
     ]);
 
     
