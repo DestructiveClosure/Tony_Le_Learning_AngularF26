@@ -1,6 +1,11 @@
 <div class="container">
-  
-  <app-course-list></app-course-list>
+
+<!--  -->
+  <nav class="nav-bar">
+    <a routerLink="/courses">Course List</a>
+    <a routerLink="/sdfsc">Not Found</a>
+  </nav>
+  <router-outlet/>
   <!-- @for (course of courses; track course.id){
     <div class="course-card">
       <h1>{{course.title}}</h1>
